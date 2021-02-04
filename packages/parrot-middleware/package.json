@@ -1,6 +1,6 @@
 {
   "name": "parrot-middleware",
-  "version": "4.0.1",
+  "version": "5.0.0-alpha.0",
   "contributors": [
     "Jack Cross <jack.cross1@aexp.com>",
     "Nathan Force <nathan.a.force@aexp.com>",
@@ -16,18 +16,19 @@
   "scripts": {
     "clean": "rimraf lib",
     "prebuild": "npm run clean",
-    "build": "babel src --out-dir lib --copy-files",
+    "build": "rollup -c",
     "prepublish": "npm run build"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.16.2",
-    "parrot-core": "^4.0.1"
+    "parrot-core": "^5.0.0-alpha.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.7.7",
-    "babel-preset-amex": "^3.3.0",
-    "rimraf": "^3.0.0"
+    "@rollup/plugin-babel": "^5.0.4",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "babel-preset-amex": "^3.4.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^2.18.0"
   }
 }

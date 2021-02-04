@@ -10,7 +10,7 @@ Let's walk through how to set up some scenarios using the parrot-middleware.
 
 ### Define your scenarios
 
-Add a file to the root of your project called [`scenarios.js`](/americanexpress/parrot/blob/master/SCENARIOS.md):
+Add a file to the root of your project called [`scenarios.js`](/americanexpress/parrot/blob/main/SCENARIOS.md):
 
 ```js
 // scenarios.js
@@ -33,6 +33,19 @@ const scenarios = {
           { name: 'Flying Dutchman', captain: 'Davy Jones' },
           { name: 'The Wanderer', captain: 'Captain Ron' },
         ],
+      },
+    },
+  ],
+  'has more ships with any mime type': [
+    {
+      request: '/ship_log',
+      response: {
+        contentType: 'text/plain',
+        body: [
+          '# Ship Log',
+          "* name: 'The Jolly Roger', captain: 'Captain Hook'",
+          "* name: 'The Black Pearl', captain: 'Jack Sparrow'",
+        ].join('\n'),
       },
     },
   ],
